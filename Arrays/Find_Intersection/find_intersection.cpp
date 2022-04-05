@@ -39,8 +39,8 @@ void find_intersection(int arr1[], int arr2[], int m, int n){
 
 int main()
 {
-    int arr1[] = { 1};
-    int arr2[] = { 1, 2};
+    int arr1[] = { 2, 2};
+    int arr2[] = { 2, 2};
  
     int m = sizeof(arr1) / sizeof(arr1[0]);
     int n = sizeof(arr2) / sizeof(arr2[0]);
@@ -49,3 +49,18 @@ int main()
 
     return 0;
 }
+
+
+/**
+    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+        vector<int> ans;
+        unordered_set<int> myset(nums1.begin(), nums1.end());
+        for(auto it: nums2){
+            if(myset.count(it) > 0){
+                ans.push_back(it);
+                myset.erase(it); // taki kisi or k sath map na ho
+            }
+        }
+        return ans;
+    }
+ **/

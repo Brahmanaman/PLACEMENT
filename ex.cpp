@@ -1,26 +1,28 @@
 #include <iostream>
+#include<vector>
 using namespace std;
 
-bool plnstr(string &name, int i , int e){
-  if(i >= e){
-    return true;
-  }
-
-  if(name[i] != name[e]){
-    return false;
-  }
-  return plnstr(name, i+1, e-1);
+void rotateArray(int arr[], int size, int k){
+    int e = size-1;
+    
+    for(int i =0; i< k; i++){
+        cout<<"aman";
+        int temp = arr[e];
+        while(e > 0){
+            arr[e] = arr[e-1];
+            e = e-1;;
+        }
+        arr[0] = temp;
+    }
 }
 
 int main() {
-  string name = "aman";
-  bool ans = plnstr(name, 0, 4);
-  if(ans){
-    cout<<"given string is plaindrome";
-  }
-  else{
-    cout<<"given string is not plaindrome";
-  }
-  
-  return 0;
+    int arr[] = {1,7,9,11};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int k = 2;
+    rotateArray(arr, n, k);
+    for(int i =0; i< n; i++){
+        cout<<arr[i]<<" ";
+    }
+    return 0;
 }
