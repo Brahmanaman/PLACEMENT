@@ -15,9 +15,11 @@ int power(int a, int b){
     // recursive call
     int ans = power(a, b/2);
 
+    //if power is even
     if(b%2==0){
         return ans * ans;
     }
+    //if power is odd
     else{
         return a * ans * ans;
     }
